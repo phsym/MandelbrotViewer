@@ -1,5 +1,8 @@
 # Mandelbrot viewer.
+*Copyright (C) 2012 Pierre-Henri Symoneaux*
+
 > THIS PROGRAM IS DISTRIBUTED WITHOUT ANY WARRANTY
+> See the license section for more information.
 
 This program lets you explore the Mandelbrot fractal
 
@@ -13,7 +16,7 @@ K -> Decrease iterations number<br>
 P -> Take a screenshot<br>
 
 ## License :
-> This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)
+> This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0). <br>
 > To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode .
 
 ## Author :

@@ -1,3 +1,13 @@
+/*
+* MandelBrotViewer
+* Copyright (C) 2012 Pierre-Henri Symoneaux
+* 
+* This work is licensed under the Creative Commons 
+* Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)
+* 
+* To view a copy of this license,
+* visit http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode .
+*/
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -16,7 +26,6 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-// See http://en.wikipedia.org/wiki/Mandelbrot_set#For_programmers
 /**
 *	@author Pierre-Henri Symoneaux
 */
