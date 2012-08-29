@@ -1,8 +1,8 @@
 # Mandelbrot viewer.
 *Copyright (C) 2012 Pierre-Henri Symoneaux*
 
-> THIS PROGRAM IS DISTRIBUTED WITHOUT ANY WARRANTY
-> See the license section for more information.
+> THIS PROGRAM IS DISTRIBUTED WITHOUT ANY WARRANTY <br>
+> See the license section for more information. <br>
 
 This program lets you explore the Mandelbrot fractal
 
