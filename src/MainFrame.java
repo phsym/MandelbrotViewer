@@ -3,7 +3,9 @@ import java.awt.HeadlessException;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-
+/**
+*	@author Pierre-Henri Symoneaux
+*/
 public class MainFrame extends Frame implements WindowListener {
 	
 	/**

@@ -17,6 +17,9 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 // See http://en.wikipedia.org/wiki/Mandelbrot_set#For_programmers
+/**
+*	@author Pierre-Henri Symoneaux
+*/
 public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWheelListener, MouseMotionListener, MouseListener {
 
 	/**

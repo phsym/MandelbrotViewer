@@ -1,6 +1,8 @@
 import java.awt.Color;
 
-
+/**
+*	@author Pierre-Henri Symoneaux
+*/
 public class ColorMap {
 	
 	public enum ColorMode {
