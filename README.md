@@ -6,7 +6,15 @@
 
 This program lets you explore the Mandelbrot fractal
 
+## How to build :
+In a terminal, go to the project directory and invoke the Ant builder with <br>
+> ant
+
 ## How to use :
+#### Windows :
+Launch the application by double-clicking on MandelbrotViewer.jar
+#### Other platform :
+> java -jar MandelbrotViewer.jar
 Drag with the mouse to exlore the fractal.<br>
 Use the mouse wheel to zoom in/out.
 
