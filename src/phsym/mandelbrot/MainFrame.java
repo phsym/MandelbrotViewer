@@ -1,4 +1,3 @@
-package phsym.mandelbrot;
 /*
 * MandelBrotViewer
 * Copyright (C) 2012 Pierre-Henri Symoneaux
@@ -9,6 +8,9 @@ package phsym.mandelbrot;
 * To view a copy of this license,
 * visit http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode .
 */
+
+package phsym.mandelbrot;
+
 import java.awt.HeadlessException;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
@@ -27,14 +29,14 @@ public class MainFrame extends JFrame implements WindowListener {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private MyCanvas canvas;
+	private FractalCanvas canvas;
 	private static JFrame f = null;
 
 	public MainFrame(String name) throws HeadlessException {
 		super(name);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		addWindowListener(this);
-		canvas = new MyCanvas();
+		canvas = new FractalCanvas(this);
 		add(canvas);
 	}
 	

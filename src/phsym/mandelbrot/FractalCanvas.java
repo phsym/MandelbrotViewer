@@ -1,4 +1,3 @@
-package phsym.mandelbrot;
 /*
 * MandelBrotViewer
 * Copyright (C) 2012 Pierre-Henri Symoneaux
@@ -9,6 +8,10 @@ package phsym.mandelbrot;
 * To view a copy of this license,
 * visit http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode .
 */
+
+package phsym.mandelbrot;
+
+
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -26,20 +29,25 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.JPopupMenu;
+import javax.swing.JFrame;
+
+import phsym.mandelbrot.menu.PopMenu;
 
 /**
 *	@author Pierre-Henri Symoneaux
 */
-public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWheelListener, MouseMotionListener, MouseListener {
+public class FractalCanvas extends Canvas implements Runnable, KeyListener, MouseWheelListener, MouseMotionListener, MouseListener {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	private JFrame frame;
+	
 	private BufferStrategy strategy;
 	
-	private JPopupMenu pop_m = null;
+	private PopMenu pop_m = null;
 	
 	private boolean running = false;
 	
@@ -55,16 +63,14 @@ public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWhee
 	private int drag_or_x;
 	private int drag_or_y;
 
-	public MyCanvas() {
+	public FractalCanvas(JFrame frame) {
+		this.frame = frame;
 		setBackground(Color.WHITE);
 		addKeyListener(this);
 		addMouseWheelListener(this);
 		addMouseMotionListener(this);
 		addMouseListener(this);
-		
-		pop_m = new JPopupMenu("toto");
-		pop_m.add("titi");
-		pop_m.add("tutu");
+		pop_m = new PopMenu(this);
 	}
 	
 	public void init(){
@@ -168,6 +174,20 @@ public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWhee
 			}
 		}
 	}
+	
+	public JFrame getFrame() {
+		return frame;
+	}
+	
+	public void takeScreenShot(){
+		screenshotting = true;
+		try {
+			ImageIO.write(im, "PNG", new File("./mandelbrot"+System.currentTimeMillis()+".png"));
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+		screenshotting = false;
+	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -195,17 +215,24 @@ public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWhee
 		}
 		
 		else if(e.getKeyChar() == 'p') // Screenshot
-		{
-			screenshotting = true;
-			try {
-				ImageIO.write(im, "PNG", new File("./mandelbrot"+System.currentTimeMillis()+".png"));
-			} catch (IOException ex) {
-				ex.printStackTrace();
-			}
-			screenshotting = false;
-		}
+			takeScreenShot();
+			
 	}
 	
+	/**
+	 * @return the max_iteration
+	 */
+	public int getMax_iteration() {
+		return max_iteration;
+	}
+
+	/**
+	 * @param max_iteration the max_iteration to set
+	 */
+	public void setMax_iteration(int max_iteration) {
+		this.max_iteration = max_iteration;
+	}
+
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent e) {
 		int val = -e.getWheelRotation();
@@ -220,7 +247,6 @@ public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWhee
 		pop_m.setVisible(false);
 		if(e.getButton() == MouseEvent.BUTTON1)
 		{
-			System.out.println("pressed");
 			drag_or_x = e.getX();
 			drag_or_y = e.getY();
 		}

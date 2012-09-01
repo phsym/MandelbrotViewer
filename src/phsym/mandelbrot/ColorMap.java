@@ -1,4 +1,3 @@
-package phsym.mandelbrot;
 /*
 * MandelBrotViewer
 * Copyright (C) 2012 Pierre-Henri Symoneaux
@@ -9,6 +8,9 @@ package phsym.mandelbrot;
 * To view a copy of this license,
 * visit http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode .
 */
+
+package phsym.mandelbrot;
+
 import java.awt.Color;
 
 /**
