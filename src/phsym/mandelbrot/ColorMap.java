@@ -23,6 +23,10 @@ public class ColorMap {
 		LINEAR,
 		MULTIPLICATION
 	}
+	
+	public static ColorMode[] getColorModes(){
+		return ColorMode.values();
+	}
 
 	public static Color getColor(int iterations, int max_iterations, ColorMode mode)
 	{

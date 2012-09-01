@@ -31,6 +31,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
+import phsym.mandelbrot.ColorMap.ColorMode;
 import phsym.mandelbrot.menu.PopMenu;
 
 /**
@@ -48,6 +49,8 @@ public class FractalCanvas extends Canvas implements Runnable, KeyListener, Mous
 	private BufferStrategy strategy;
 	
 	private PopMenu pop_m = null;
+	
+	private ColorMode colorMode = ColorMode.FIRE;
 	
 	private boolean running = false;
 	
@@ -119,7 +122,7 @@ public class FractalCanvas extends Canvas implements Runnable, KeyListener, Mous
 					x = xtemp;
 					iteration++;
 				}
-				im.setRGB(j, i, ColorMap.getColor(iteration, max_iteration, ColorMap.ColorMode.FIRE).getRGB());
+				im.setRGB(j, i, ColorMap.getColor(iteration, max_iteration, colorMode).getRGB());
 
 				if(!running)
 					return;
@@ -231,6 +234,14 @@ public class FractalCanvas extends Canvas implements Runnable, KeyListener, Mous
 	 */
 	public void setMax_iteration(int max_iteration) {
 		this.max_iteration = max_iteration;
+	}
+	
+	public ColorMode getColorMode() {
+		return colorMode;
+	}
+
+	public void setColorMode(ColorMode colorMode) {
+		this.colorMode = colorMode;
 	}
 
 	@Override
