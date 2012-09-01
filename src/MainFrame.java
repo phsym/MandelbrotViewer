@@ -13,6 +13,9 @@ import java.awt.HeadlessException;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+
 /**
 *	@author Pierre-Henri Symoneaux
 */
@@ -51,6 +54,16 @@ public class MainFrame extends Frame implements WindowListener {
 	}
 	
 	public static void main(String[] args) {
+		// Get the native look and feel class name
+		String nativeLF = UIManager.getSystemLookAndFeelClassName();
+
+		// Install the look and feel
+		try {
+		    UIManager.setLookAndFeel(nativeLF);
+		} catch (Exception e) {
+			System.err.println("Could not set native look and feel");
+		}
+		
 		f = new MainFrame("Mandelbrot");
 		f.setSize(1600, (int)((2d/3.5d)*1600d));
 		f.setVisible(true);
@@ -58,8 +71,12 @@ public class MainFrame extends Frame implements WindowListener {
 
 	@Override
 	public void windowClosing(WindowEvent e) {
-		setVisible(false);
-		dispose();
+		if(JOptionPane.showConfirmDialog(this, "Are you sure ?", "Quit ?", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
+		{
+			setVisible(false);
+			dispose();
+			System.exit(0);
+		}
 	}
 
 	
