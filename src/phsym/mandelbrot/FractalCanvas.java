@@ -194,24 +194,10 @@ public class FractalCanvas extends Canvas implements Runnable, KeyListener, Mous
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		if(e.getKeyChar() == '+') // Zoom in
-			zoom*=1.1;
-		else if(e.getKeyChar() == '-') //Zoom out
-			zoom/=1.1;
-		else if(e.getKeyChar() == 'q') // Left
-			tx += 1;
-		else if(e.getKeyChar() == 'd') // Right
-			tx -= 1;
-		else if(e.getKeyChar() == 'z') // Up
-			ty += 1;
-		else if(e.getKeyChar() == 's') // Down
-			ty -= 1;
-		else if (e.getKeyChar() == 'i') // increase max itarations
+		if (e.getKeyChar() == 'i') // increase max itarations
 			max_iteration++;
 		else if (e.getKeyChar() == 'k') // Decrease max iterations
 			max_iteration--;
-		else if(e.getKeyChar() == 'r') // Reset position
-			reset();
 		else if(e.getKeyChar() == 'p') // Screenshot
 			takeScreenShot();
 	}
