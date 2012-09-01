@@ -255,7 +255,6 @@ public class FractalCanvas extends Canvas implements Runnable, KeyListener, Mous
 	
 	@Override
 	public void mousePressed(MouseEvent e) {
-		pop_m.setVisible(false);
 		if(e.getButton() == MouseEvent.BUTTON1)
 		{
 			drag_or_x = e.getX();
@@ -278,8 +277,7 @@ public class FractalCanvas extends Canvas implements Runnable, KeyListener, Mous
 	public void mouseClicked(MouseEvent e) {
 		if(e.getButton() == MouseEvent.BUTTON3)
 		{
-			pop_m.setLocation(e.getX(), e.getY());
-			pop_m.setVisible(true);
+			pop_m.show(this, e.getX(), e.getY());
 		}
 	}
 	

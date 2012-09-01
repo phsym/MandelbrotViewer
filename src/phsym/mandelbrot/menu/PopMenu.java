@@ -46,7 +46,6 @@ public class PopMenu extends JPopupMenu {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
 				options.setVisible(true);
 			}
 		});
@@ -58,7 +57,6 @@ public class PopMenu extends JPopupMenu {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
 				canvas.takeScreenShot();
 			}
 		});

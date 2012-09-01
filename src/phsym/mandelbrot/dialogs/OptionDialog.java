@@ -42,7 +42,7 @@ public class OptionDialog extends JDialog {
 	
 	private JTextField iterations;
 	
-	private JComboBox colorMode;
+	private JComboBox<ColorMode> colorMode;
 	
 	private JButton b_cancel;
 	private JButton b_OK;
