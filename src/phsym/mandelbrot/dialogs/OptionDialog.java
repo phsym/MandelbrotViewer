@@ -81,6 +81,8 @@ public class OptionDialog extends JDialog {
 		b_OK.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				if((Integer)iterations.getValue() <= 0)
+					iterations.setValue(1);
 				canvas.setMax_iteration((Integer)iterations.getValue());
 				canvas.setColorMode((ColorMode) colorMode.getSelectedItem());
 				setVisible(false);

@@ -211,15 +211,15 @@ public class FractalCanvas extends Canvas implements Runnable, KeyListener, Mous
 		else if (e.getKeyChar() == 'k') // Decrease max iterations
 			max_iteration--;
 		else if(e.getKeyChar() == 'r') // Reset position
-		{
-			tx = 0;
-			ty = 0;
-			zoom = 1;
-		}
-		
+			reset();
 		else if(e.getKeyChar() == 'p') // Screenshot
 			takeScreenShot();
-			
+	}
+	
+	public void reset(){
+		tx = 0;
+		ty = 0;
+		zoom = 1;
 	}
 	
 	/**

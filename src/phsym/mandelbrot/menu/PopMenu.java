@@ -43,7 +43,6 @@ public class PopMenu extends JPopupMenu {
 		
 		JMenuItem itm = new JMenuItem("Settings");
 		itm.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				options.setVisible(true);
@@ -54,10 +53,18 @@ public class PopMenu extends JPopupMenu {
 		
 		itm = new JMenuItem("Screenshot");
 		itm.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				canvas.takeScreenShot();
+			}
+		});
+		add(itm);
+		
+		itm = new JMenuItem("Reset");
+		itm.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				canvas.reset();
 			}
 		});
 		add(itm);
