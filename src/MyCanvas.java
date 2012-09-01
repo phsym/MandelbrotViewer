@@ -209,16 +209,23 @@ public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWhee
 	
 	@Override
 	public void mousePressed(MouseEvent e) {
-		drag_or_x = e.getX();
-		drag_or_y = e.getY();
+		if(e.getButton() == MouseEvent.BUTTON1)
+		{
+			System.out.println("pressed");
+			drag_or_x = e.getX();
+			drag_or_y = e.getY();
+		}
 	}
 	
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		ty -= drag_or_y - e.getY();
-		tx -= drag_or_x - e.getX();
-		drag_or_x = e.getX();
-		drag_or_y = e.getY();
+		if((e.getModifiersEx() & MouseEvent.BUTTON1_DOWN_MASK) == MouseEvent.BUTTON1_DOWN_MASK)
+		{
+			ty -= drag_or_y - e.getY();
+			tx -= drag_or_x - e.getX();
+			drag_or_x = e.getX();
+			drag_or_y = e.getY();
+		}
 	}
 	
 	
