@@ -19,7 +19,8 @@ In a terminal, invoke <br>
 
 ## How to use :
 Drag with the mouse to exlore the fractal.<br>
-Use the mouse wheel to zoom in/out.
+Use the mouse wheel to zoom in/out.<br>
+Right click on the fractal to show the menu.
 
 ### Keys :
 I -> Increase iterations number<br>
