@@ -11,7 +11,6 @@
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.PopupMenu;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -26,6 +25,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.JPopupMenu;
 
 /**
 *	@author Pierre-Henri Symoneaux
@@ -37,6 +37,8 @@ public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWhee
 	 */
 	private static final long serialVersionUID = 1L;
 	private BufferStrategy strategy;
+	
+	private JPopupMenu pop_m = null;
 	
 	private boolean running = false;
 	
@@ -58,6 +60,10 @@ public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWhee
 		addMouseWheelListener(this);
 		addMouseMotionListener(this);
 		addMouseListener(this);
+		
+//		pop_m = new JPopupMenu("toto");
+//		pop_m.add("titi");
+//		pop_m.add("tutu");
 	}
 	
 	public void init(){
@@ -210,6 +216,7 @@ public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWhee
 	
 	@Override
 	public void mousePressed(MouseEvent e) {
+//		pop_m.setVisible(false);
 		if(e.getButton() == MouseEvent.BUTTON1)
 		{
 			System.out.println("pressed");
@@ -231,10 +238,11 @@ public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWhee
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		PopupMenu pop_m = new PopupMenu("toto");
-		pop_m.add("titi");
-		pop_m.add("tutu");
-		
+//		if(e.getButton() == MouseEvent.BUTTON3)
+//		{
+//			pop_m.setLocation(e.getX(), e.getY());
+//			pop_m.setVisible(true);
+//		}
 	}
 	
 	
