@@ -19,7 +19,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
+import javax.swing.JSpinner;
 
 import phsym.mandelbrot.ColorMap;
 import phsym.mandelbrot.FractalCanvas;
@@ -40,7 +40,7 @@ public class OptionDialog extends JDialog {
 	
 	private GridLayout layout;
 	
-	private JTextField iterations;
+	private JSpinner iterations;
 	
 	private JComboBox<ColorMode> colorMode;
 	
@@ -58,7 +58,8 @@ public class OptionDialog extends JDialog {
 		
 		setLayout(layout);
 		add(new JLabel("Iterations : "));
-		iterations = new JTextField(Integer.toString(canvas.getMax_iteration()));
+		iterations = new JSpinner();
+		iterations.setValue(canvas.getMax_iteration());
 		
 		add(iterations);
 		
@@ -80,7 +81,7 @@ public class OptionDialog extends JDialog {
 		b_OK.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				canvas.setMax_iteration(Integer.parseInt(iterations.getText()));
+				canvas.setMax_iteration((Integer)iterations.getValue());
 				canvas.setColorMode((ColorMode) colorMode.getSelectedItem());
 				setVisible(false);
 			}
@@ -95,7 +96,7 @@ public class OptionDialog extends JDialog {
 	public void setVisible(boolean b) {
 		if(b)
 		{
-			iterations.setText(Integer.toString(canvas.getMax_iteration()));
+			iterations.setValue(canvas.getMax_iteration());
 			colorMode.setSelectedItem(canvas.getColorMode());
 		}
 		super.setVisible(b);
