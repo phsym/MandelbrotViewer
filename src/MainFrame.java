@@ -8,18 +8,18 @@
 * To view a copy of this license,
 * visit http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode .
 */
-import java.awt.Frame;
 import java.awt.HeadlessException;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
 *	@author Pierre-Henri Symoneaux
 */
-public class MainFrame extends Frame implements WindowListener {
+public class MainFrame extends JFrame implements WindowListener {
 	
 	/**
 	 * 
@@ -27,10 +27,12 @@ public class MainFrame extends Frame implements WindowListener {
 	private static final long serialVersionUID = 1L;
 	
 	private MyCanvas canvas;
-	private static Frame f = null;
+	private static JFrame f = null;
 
 	public MainFrame(String name) throws HeadlessException {
 		super(name);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		addWindowListener(this);
 		canvas = new MyCanvas();
 		add(canvas);
 	}
@@ -39,7 +41,6 @@ public class MainFrame extends Frame implements WindowListener {
 	public void setSize(int width, int height) {
 		super.setSize(width, height);
 		canvas.setSize(width, height);
-		addWindowListener(this);
 	}
 	
 	@Override

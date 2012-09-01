@@ -11,6 +11,7 @@
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.PopupMenu;
 import java.awt.RenderingHints;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -228,7 +229,13 @@ public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWhee
 		}
 	}
 	
-	
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		PopupMenu pop_m = new PopupMenu("toto");
+		pop_m.add("titi");
+		pop_m.add("tutu");
+		
+	}
 	
 	
 	/* UNUSED IMPLEMENTED METHODS */
@@ -239,8 +246,6 @@ public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWhee
 	public void keyReleased(KeyEvent e) {}
 	@Override
 	public void mouseMoved(MouseEvent e) {}
-	@Override
-	public void mouseClicked(MouseEvent e) {}
 	@Override
 	public void mouseEntered(MouseEvent e) {}
 	@Override
