@@ -1,3 +1,4 @@
+package phsym.mandelbrot;
 /*
 * MandelBrotViewer
 * Copyright (C) 2012 Pierre-Henri Symoneaux

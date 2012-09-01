@@ -1,3 +1,4 @@
+package phsym.mandelbrot;
 /*
 * MandelBrotViewer
 * Copyright (C) 2012 Pierre-Henri Symoneaux
@@ -61,9 +62,9 @@ public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWhee
 		addMouseMotionListener(this);
 		addMouseListener(this);
 		
-//		pop_m = new JPopupMenu("toto");
-//		pop_m.add("titi");
-//		pop_m.add("tutu");
+		pop_m = new JPopupMenu("toto");
+		pop_m.add("titi");
+		pop_m.add("tutu");
 	}
 	
 	public void init(){
@@ -216,7 +217,7 @@ public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWhee
 	
 	@Override
 	public void mousePressed(MouseEvent e) {
-//		pop_m.setVisible(false);
+		pop_m.setVisible(false);
 		if(e.getButton() == MouseEvent.BUTTON1)
 		{
 			System.out.println("pressed");
@@ -238,11 +239,11 @@ public class MyCanvas extends Canvas implements Runnable, KeyListener, MouseWhee
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-//		if(e.getButton() == MouseEvent.BUTTON3)
-//		{
-//			pop_m.setLocation(e.getX(), e.getY());
-//			pop_m.setVisible(true);
-//		}
+		if(e.getButton() == MouseEvent.BUTTON3)
+		{
+			pop_m.setLocation(e.getX(), e.getY());
+			pop_m.setVisible(true);
+		}
 	}
 	
 	
