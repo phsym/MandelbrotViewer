@@ -3,10 +3,10 @@
 * Copyright (C) 2012 Pierre-Henri Symoneaux
 * 
 * This work is licensed under the Creative Commons 
-* Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)
+* Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
 * 
 * To view a copy of this license,
-* visit http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode .
+* visit http://creativecommons.org/licenses/by-sa/3.0/legalcode .
 */
 
 package phsym.mandelbrot;
