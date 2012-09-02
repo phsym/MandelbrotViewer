@@ -6,6 +6,9 @@
 
 This program lets you explore the Mandelbrot fractal
 
+## Requirements :
+Java 7
+
 ## How to build :
 In a terminal, go to the project directory and invoke the Ant builder with <br>
 > ant
