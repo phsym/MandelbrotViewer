@@ -29,7 +29,9 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import phsym.mandelbrot.ColorMap.ColorMode;
 import phsym.mandelbrot.menu.PopMenu;
@@ -184,10 +186,20 @@ public class FractalCanvas extends Canvas implements Runnable, KeyListener, Mous
 	
 	public void takeScreenShot(){
 		screenshotting = true;
-		try {
-			ImageIO.write(im, "PNG", new File("./mandelbrot"+System.currentTimeMillis()+".png"));
-		} catch (IOException ex) {
-			ex.printStackTrace();
+		JFileChooser fileChooser = new JFileChooser();
+		fileChooser.setFileFilter(new FileNameExtensionFilter("PNG images","png"));
+		fileChooser.setSelectedFile(new File("Screenshot_Mandelbrot_"+System.currentTimeMillis()+".png"));
+		int saveStatus = fileChooser.showSaveDialog(this);
+		if (saveStatus == JFileChooser.CANCEL_OPTION) {
+			screenshotting = false;
+			return; 
+		} 
+		else if (saveStatus == JFileChooser.APPROVE_OPTION) { 
+			try {
+				ImageIO.write(im, "PNG", new File(fileChooser.getSelectedFile().getAbsolutePath()));
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			} 
 		}
 		screenshotting = false;
 	}
