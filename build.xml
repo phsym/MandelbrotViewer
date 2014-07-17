@@ -37,7 +37,7 @@
 	<target depends="build-all" name="build">
 	     <jar destfile="./MandelbrotViewer.jar" filesetmanifest="mergewithoutmain">
 	         <manifest>
-	             <attribute name="Main-Class" value="MainFrame"/>
+	             <attribute name="Main-Class" value="phsym.mandelbrot.MainFrame"/>
 	             <attribute name="Class-Path" value="."/>
 	         </manifest>
 	         <fileset dir="./bin"/>
