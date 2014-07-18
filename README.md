@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/phsym/MandelbrotViewer.svg?branch=master)](https://travis-ci.org/phsym/MandelbrotViewer)
 # Mandelbrot viewer.
 *Copyright (C) 2012 Pierre-Henri Symoneaux*
 
